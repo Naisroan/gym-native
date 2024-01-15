@@ -1,18 +1,21 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "src/*"
-      ],
-      "tests": [
-        "tests/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-    },
-    "strictNullChecks": false
-  },
+	"extends": "@tsconfig/react-native/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"*": [
+				"src/*"
+			],
+			"tests": [
+				"tests/*"
+			],
+			"@components/*": [
+				"src/components/*"
+			],
+			"@views/*": [
+				"src/views/*"
+			]
+		},
+		"strictNullChecks": false
+	},
 }

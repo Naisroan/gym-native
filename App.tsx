@@ -1,24 +1,12 @@
-import { StyleSheet, View } from 'react-native'
-import { StatusBar } from 'expo-status-bar'
-import { Text, TouchableButton } from 'components'
+import { SafeAreaView } from 'react-native'
+import { Provider } from 'react-redux'
+import store from 'store'
+import { Main } from 'views'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={{ paddingBottom: 16 }}> Hola 👀 </Text>
-      <TouchableButton
-        text='Pusheame 😀'
-      />
-      <StatusBar style="auto" />
-    </View>
-  )
+	return (
+		<Provider store={store}>
+			<Main />
+		</Provider>
+	)
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
