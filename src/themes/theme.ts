@@ -2,13 +2,13 @@ import { ColorSchema, ThemeType } from "types"
 
 const PRIMARY_DARK_STYLES = {
 	BG_COLOR: '#273238',
-	PRIMARY_COLOR: '#80BCBD',
+	PRIMARY_COLOR: '#702f35',
 	TEXT_COLOR: 'white'
 }
 
 const PRIMARY_LIGHT_STYLES = {
 	BG_COLOR: '#FFFFFF',
-	PRIMARY_COLOR: '#80BCBD',
+	PRIMARY_COLOR: '#da7350',
 	TEXT_COLOR: '#181818'
 }
 
