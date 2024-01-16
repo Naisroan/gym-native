@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { appActions } from "./actions"
 
-interface AppState {
+export interface AppState {
 
 	currentTheme: 'light' | 'dark'
 
@@ -17,5 +18,11 @@ const initialState: AppState = {
 export const appSlice = createSlice({
 	name: "app",
 	reducers: {},
-	initialState: initialState
+	initialState: initialState,
+	extraReducers: builder => {
+		builder.addCase(appActions.set, (state, { payload, type }) => {
+			// @ts-ignore
+			state[payload.key] = payload.value
+		})
+	}
 })

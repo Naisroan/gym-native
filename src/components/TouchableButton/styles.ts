@@ -8,7 +8,7 @@ export const getStyles = (
 	variant: TouchableVariant,
 	flatStyles?: StyleProp<ViewStyle>
 ) => {
-	const { palette } = currentTheme
+	const { palette, theme } = currentTheme
 
 	const touchableStyles: { [key in TouchableVariant]: ViewStyle } = {
 		'default': {
@@ -32,7 +32,7 @@ export const getStyles = (
 		},
 
 		'contained': {
-			color: palette.TEXT_COLOR
+			color: 'white'
 		},
 
 		'outlined': {
