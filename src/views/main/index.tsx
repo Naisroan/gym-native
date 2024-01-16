@@ -1,30 +1,23 @@
-import { SafeAreaView, StyleSheet, View } from 'react-native'
+import { SafeAreaView, View } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { Text, TouchableButton } from 'components'
+import { Text } from 'components'
 import { useAppSelector } from 'store'
+import { useCurrentTheme } from 'hooks'
+import { styles as getStyles } from './styles'
 
 export function Main() {
-	const isSafeAreaOn = useAppSelector(state => state.app.globalSafeArea)
-	const Wrapper = isSafeAreaOn ? SafeAreaView : View
+	const currentTheme = useCurrentTheme()
+	const globalSafeArea = useAppSelector(state => state.app.globalSafeArea)
+
+	const styles = getStyles(currentTheme)
+	const Wrapper = globalSafeArea ? SafeAreaView : View
 
 	return (
-		<Wrapper style={styles.container}>
-			<Text style={{ paddingBottom: 16 }}> Hola 👀 </Text>
-			<TouchableButton
-				text='Pusheame 😀'
-				onPress={() => {
-				}}
-			/>
-			<StatusBar style="auto" />
+		<Wrapper style={styles.root}>
+			<View style={styles.container}>
+				<Text>asda</Text>
+			</View>
+			<StatusBar style={currentTheme.theme === 'light' ? 'dark' : 'light'} />
 		</Wrapper>
 	)
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-})

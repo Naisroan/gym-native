@@ -1,13 +1,13 @@
 import { ImageStyle, StyleProp, StyleSheet, TextStyle, ViewStyle } from "react-native"
 import { combineStyles } from "./combineStyles"
-import { STYLE_CONSTANTS } from "./constants"
+import { theme } from "./theme"
 
 export * from "./combineStyles"
-export * from "./constants"
+export * from "./theme"
 
 /** Root styles to any component */
 const rootStyles = StyleSheet.flatten<ViewStyle | TextStyle | ImageStyle>({
-	fontSize: STYLE_CONSTANTS.FONT_SIZE
+	fontSize: theme.fontSize
 })
 
 /** Styles to each native components */

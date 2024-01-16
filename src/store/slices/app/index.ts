@@ -1,10 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
 interface AppState {
+
+	currentTheme: 'light' | 'dark'
+
+	/** If is true set the global wrapper as SafeAreaView else as View */
 	globalSafeArea: boolean
+
 }
 
 const initialState: AppState = {
+	currentTheme: 'dark',
 	globalSafeArea: true
 }
 

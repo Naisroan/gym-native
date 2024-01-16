@@ -12,8 +12,23 @@
 			"@components/*": [
 				"src/components/*"
 			],
+			"@hooks/*": [
+				"src/hooks/*"
+			],
+			"@types/*": [
+				"src/types/*"
+			],
+			"@helpers/*": [
+				"src/helpers/*"
+			],
 			"@views/*": [
 				"src/views/*"
+			],
+			"@store/*": [
+				"src/store/*"
+			],
+			"@routes/*": [
+				"src/routes/*"
 			]
 		},
 		"strictNullChecks": false

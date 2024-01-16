@@ -12,6 +12,12 @@ module.exports = function (api) {
 						tests: ['./tests/'],
 						"@components": "./src/components",
 						"@views": "./src/views",
+						"@helpers": "./src/helpers",
+						"@hooks": "./src/hooks",
+						"@routes": "./src/routes",
+						"@store": "./src/store",
+						"@themes": "./src/themes",
+						"@types": "./src/types",
 					}
 				}
 			]

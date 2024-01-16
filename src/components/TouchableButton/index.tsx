@@ -1,4 +1,5 @@
 import { Text, TextProps } from "components/Text"
+import { useCurrentTheme } from "hooks/useCurrentTheme"
 import { TouchableTypeProps, TouchableImplementation, touchableComponents, TouchableVariant } from "./helpers"
 import { getStyles } from "./styles"
 
@@ -18,8 +19,9 @@ export function TouchableButton({
 	textProps,
 	...rest
 }: TouchableButtonProps) {
+	const currentTheme = useCurrentTheme()
+	const styles = getStyles(currentTheme, variant, style)
 
-	const styles = getStyles(variant, style)
 	const TouchableComponent = touchableComponents[implementation]
 
 	return (
