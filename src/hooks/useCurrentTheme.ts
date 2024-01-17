@@ -1,6 +1,5 @@
 import { useAppSelector } from "store"
-import { theme } from "themes"
-import { ColorSchema, ThemeType } from "types"
+import { theme, ColorSchema, ThemeType } from "themes"
 
 export interface CurrentTheme {
 	theme: ThemeType,

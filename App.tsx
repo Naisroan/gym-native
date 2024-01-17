@@ -1,12 +1,43 @@
+import { useCallback, useEffect, useState } from 'react'
+import * as SplashScreen from 'expo-splash-screen'
+import { Home } from 'views'
+import { useSetFonts } from 'hooks'
+
 import { Provider } from 'react-redux'
-import { Main } from 'views'
 import store from 'store'
-import { SafeAreaView } from 'react-native'
+
+SplashScreen.preventAutoHideAsync()
 
 export default function App() {
+	const [appIsReady, setAppIsReady] = useState(false)
+	const [fontsLoaded] = useSetFonts()
+
+	useEffect(() => {
+		async function prepare() {
+			try {
+			} catch (e) {
+				console.warn(e)
+			} finally {
+				setAppIsReady(true)
+			}
+		}
+
+		prepare()
+	}, [])
+
+	const onLayoutRootView = useCallback(async () => {
+		if (appIsReady && fontsLoaded) {
+			await SplashScreen.hideAsync()
+		}
+	}, [appIsReady, fontsLoaded])
+
+	if (!appIsReady || !fontsLoaded) {
+		return null
+	}
+
 	return (
 		<Provider store={store}>
-			<Main />
+			<Home onLayoutRootView={onLayoutRootView} />
 		</Provider>
 	)
 }
