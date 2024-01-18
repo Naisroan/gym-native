@@ -11,7 +11,7 @@ export interface AppState {
 }
 
 const initialState: AppState = {
-	currentTheme: 'dark',
+	currentTheme: 'light',
 	globalSafeArea: true
 }
 
