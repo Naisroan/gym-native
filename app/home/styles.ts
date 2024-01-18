@@ -1,6 +1,5 @@
 import { CurrentTheme } from "hooks"
 import { Platform, StyleSheet } from "react-native"
-import { theme } from "themes"
 
 export const styles = (currentTheme: CurrentTheme) => StyleSheet.create({
 	root: {

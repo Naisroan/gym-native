@@ -21,9 +21,6 @@
 			"@helpers/*": [
 				"src/helpers/*"
 			],
-			"@views/*": [
-				"src/views/*"
-			],
 			"@store/*": [
 				"src/store/*"
 			],

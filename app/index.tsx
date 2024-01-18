@@ -1,14 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
-import * as SplashScreen from 'expo-splash-screen'
-import { Home } from 'views'
 import { useSetFonts } from 'hooks'
 
-import { Provider } from 'react-redux'
-import store from 'store'
+import * as SplashScreen from 'expo-splash-screen'
+import { View } from 'react-native'
+import { router } from 'expo-router'
 
-SplashScreen.preventAutoHideAsync()
-
-export default function App() {
+export default function AppPage() {
 	const [appIsReady, setAppIsReady] = useState(false)
 	const [fontsLoaded] = useSetFonts()
 
@@ -28,6 +25,9 @@ export default function App() {
 	const onLayoutRootView = useCallback(async () => {
 		if (appIsReady && fontsLoaded) {
 			await SplashScreen.hideAsync()
+
+			// redirect to home page
+			router.replace('/home')
 		}
 	}, [appIsReady, fontsLoaded])
 
@@ -35,9 +35,5 @@ export default function App() {
 		return null
 	}
 
-	return (
-		<Provider store={store}>
-			<Home onLayoutRootView={onLayoutRootView} />
-		</Provider>
-	)
+	return <View onLayout={onLayoutRootView} />
 }
