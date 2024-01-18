@@ -5,6 +5,8 @@ import * as SplashScreen from 'expo-splash-screen'
 import { View } from 'react-native'
 import { router } from 'expo-router'
 
+SplashScreen.preventAutoHideAsync();
+
 export default function AppPage() {
 	const [appIsReady, setAppIsReady] = useState(false)
 	const [fontsLoaded] = useSetFonts()
