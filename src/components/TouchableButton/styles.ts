@@ -12,7 +12,7 @@ export const getStyles = (
 
 	const touchableStyles: { [key in TouchableVariant]: ViewStyle } = {
 		'default': {
-			backgroundColor: 'transparent',
+			backgroundColor: palette.BG_COLOR,
 			borderColor: palette.TEXT_COLOR
 		},
 
@@ -22,6 +22,7 @@ export const getStyles = (
 		},
 
 		'outlined': {
+			backgroundColor: palette.BG_COLOR,
 			borderColor: palette.PRIMARY_COLOR
 		}
 	}
