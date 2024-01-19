@@ -29,6 +29,9 @@
 			],
 			"@utils/*": [
 				"src/utils/*"
+			],
+			"@views/*": [
+				"src/views/*"
 			]
 		},
 		"strictNullChecks": false

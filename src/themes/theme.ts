@@ -1,15 +1,17 @@
 import { ColorSchema, ThemeType } from "./types"
 
-const PRIMARY_DARK_STYLES = {
+const PRIMARY_DARK_STYLES: ColorSchema = {
 	BG_COLOR: '#161616',
 	PRIMARY_COLOR: '#702f35',
-	TEXT_COLOR: 'white'
+	PRIMARY_INVERT_COLOR: 'white',
+	TEXT_COLOR: 'white',
 }
 
-const PRIMARY_LIGHT_STYLES = {
+const PRIMARY_LIGHT_STYLES: ColorSchema = {
 	BG_COLOR: '#F5F5F5',
 	PRIMARY_COLOR: '#fe5938',
-	TEXT_COLOR: '#181818'
+	PRIMARY_INVERT_COLOR: 'white',
+	TEXT_COLOR: '#181818',
 }
 
 const FONT_FAMILY = 'Ubuntu'

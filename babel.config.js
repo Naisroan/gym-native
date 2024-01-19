@@ -19,7 +19,7 @@ module.exports = function (api) {
 						"@themes": "./src/themes",
 						"@types": "./src/types",
 						"@utils": "./src/utils",
-						"@pages": "./src/pages"
+						"@views": "./src/views"
 					}
 				}
 			]
