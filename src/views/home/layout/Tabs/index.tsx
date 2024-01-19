@@ -13,7 +13,8 @@ export function TabsView() {
 		<Tabs
 			sceneContainerStyle={{
 				padding: 24,
-				paddingBottom: 0
+				paddingBottom: 0,
+				backgroundColor: theme.palette.BG_COLOR
 			}}
 			screenOptions={{
 				headerShown: false,

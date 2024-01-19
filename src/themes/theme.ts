@@ -2,7 +2,7 @@ import { ColorSchema, ThemeType } from "./types"
 
 const PRIMARY_DARK_STYLES: ColorSchema = {
 	BG_COLOR: '#161616',
-	PRIMARY_COLOR: '#702f35',
+	PRIMARY_COLOR: '#e52b50',
 	PRIMARY_INVERT_COLOR: 'white',
 	TEXT_COLOR: 'white',
 }
