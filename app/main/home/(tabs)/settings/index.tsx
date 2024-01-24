@@ -1,8 +1,8 @@
 import { Text } from "components"
 import { View } from "react-native"
 import { ScrollView, Switch } from "react-native-gesture-handler"
-import { SettingsSection, SettingOption } from "views/home/settings"
-import { styles } from "views/home/settings/styles"
+import { SettingsSection, SettingOption } from "views/main/home/settings"
+import { styles } from "views/main/home/settings/styles"
 
 import { useAppDispatch, useAppSelector } from "store"
 import { appActions } from "store/slices/app/actions"
@@ -15,7 +15,7 @@ export default function SettingsPage() {
 	return (
 		<View style={{ flex: 1 }}>
 
-			<Text style={styles.titleText}>
+			<Text variant="title" style={styles.titleText}>
 				Configuración
 			</Text>
 

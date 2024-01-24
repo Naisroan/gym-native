@@ -9,6 +9,9 @@ export const styles = (currentTheme: CurrentTheme) => StyleSheet.create({
 	container: {
 		backgroundColor: 'transparent',
 		flex: 1,
-		paddingTop: Platform.OS === 'android' ? 40 : 0,
+		// paddingTop: Platform.OS === 'android' ? 40 : 0,
+	},
+	screenContent: {
+		backgroundColor: 'transparent'
 	}
 })

@@ -5,7 +5,7 @@ import { useCurrentTheme } from "hooks"
 
 import Ionicons from '@expo/vector-icons/Ionicons'
 
-export function TabsView() {
+export default function HomeLayout() {
 	const theme = useCurrentTheme()
 	const pathname = usePathname()
 
@@ -20,9 +20,9 @@ export function TabsView() {
 				headerShown: false,
 				tabBarStyle: {
 					height: 90,
-					backgroundColor: 'transparent',
-					// borderTopColor: theme.palette.PRIMARY_COLOR,
-					borderTopWidth: 1
+					backgroundColor: theme.palette.BG_COLOR,
+					borderTopWidth: 1,
+					borderTopColor: theme.palette.PRIMARY_COLOR
 				},
 				tabBarItemStyle: {
 					paddingTop: 12
@@ -33,7 +33,7 @@ export function TabsView() {
 		>
 
 			<Tabs.Screen
-				name="(tabs)/practices"
+				name="(tabs)/practices/index"
 				options={{
 					tabBarLabel: 'Ejercicios',
 					tabBarIcon: props => (
@@ -84,7 +84,7 @@ export function TabsView() {
 			/>
 
 			<Tabs.Screen
-				name="(tabs)/settings"
+				name="(tabs)/settings/index"
 				options={{
 					tabBarLabel: 'Configuración',
 					tabBarIcon: props => (

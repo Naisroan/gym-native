@@ -7,15 +7,20 @@ import { useCurrentTheme } from "hooks/useCurrentTheme"
 import { getStyles } from "./styles"
 
 export interface TextProps extends ReactNativeTextProps {
+	variant?: 'none' | 'title' | 'subtitle'
 }
 
-export function Text({ style, ...rest }: TextProps) {
+export function Text({ style, variant, ...rest }: TextProps) {
 	const currentTheme = useCurrentTheme()
-	const styles = getStyles(currentTheme, style)
+	const styles = getStyles({ currentTheme, flatStyles: style })
 
 	return (
 		<ReactNativeText
-			style={styles}
+			style={[
+				styles.root,
+				variant === 'title' && styles.title,
+				variant === 'subtitle' && styles.subtitle
+			]}
 			{...rest}
 		/>
 	)

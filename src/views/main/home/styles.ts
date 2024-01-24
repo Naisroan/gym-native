@@ -2,11 +2,10 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 	titleText: {
-		fontSize: 32,
-		fontWeight: "700",
-		marginBottom: 24
+		marginBottom: 8
 	},
-	settingOption: {
-		marginBottom: 12
+	subtitleText: {
+		fontSize: 20,
+		marginBottom: 24
 	}
 })

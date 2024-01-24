@@ -1,9 +1,11 @@
 import {
 	appSlice,
-	counterSlice
+	counterSlice,
+	practicesSlice
 } from "./slices"
 
 export default {
 	app: appSlice.reducer,
-	counter: counterSlice.reducer
+	counter: counterSlice.reducer,
+	practices: practicesSlice.reducer
 }

@@ -29,7 +29,7 @@ export default function AppPage() {
 			await SplashScreen.hideAsync()
 
 			// redirect to home page
-			router.replace('/home')
+			router.replace('/main')
 		}
 	}, [appIsReady, fontsLoaded])
 
