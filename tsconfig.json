@@ -34,6 +34,7 @@
 				"src/views/*"
 			]
 		},
-		"strictNullChecks": false
+		"strictNullChecks": false,
+		"moduleResolution": "Node"
 	},
 }
