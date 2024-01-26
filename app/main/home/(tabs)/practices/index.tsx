@@ -30,7 +30,7 @@ export default function PracticesPage() {
 				<Pressable
 					style={styles.addPressable}
 					onPress={e => {
-						router.push('/main/practices/form')
+						router.push('/main/practices/0')
 					}}
 				>
 					<Ionicons

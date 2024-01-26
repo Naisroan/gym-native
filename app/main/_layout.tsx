@@ -29,7 +29,7 @@ export default function MainLayout() {
 					/>
 
 					<Stack.Screen
-						name="practices/form"
+						name="practices/[id]"
 						options={{
 							headerShown: false,
 							presentation: 'modal',
