@@ -13,6 +13,10 @@ const create = createAction(PRACTICES_TYPES.CREATE, (practice: PracticeType) => 
 	payload: { practice }
 }))
 
+const update = createAction(PRACTICES_TYPES.UPDATE, (id: string, practice: PracticeType) => ({
+	payload: { id, practice }
+}))
+
 const getOne = createAction(PRACTICES_TYPES.GET_ONE, (id: string) => ({
 	payload: { id }
 }))
@@ -25,6 +29,8 @@ export const practicesActions = {
 	set,
 
 	create,
+	update,
+
 	getOne,
 	setOne,
 }

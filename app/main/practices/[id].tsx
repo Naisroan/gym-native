@@ -7,7 +7,7 @@ import { TouchableButton, Text, TextInput, TimerPicker } from "components"
 import { PracticeType } from "types"
 import { styles } from "views/main/practices/styles"
 
-import { useAppDispatch } from "store"
+import { useAppDispatch, useAppSelector } from "store"
 import { practicesActions } from "store/slices/practices/actions"
 
 import Ionicons from '@expo/vector-icons/Ionicons'
@@ -17,6 +17,7 @@ import _ from "lodash"
 export default function PracticeFormPage() {
 	const { id } = useLocalSearchParams()
 	const dispatch = useAppDispatch()
+	const statePractice = useAppSelector(state => state.practices.practice)
 	const timerPickerRef = useRef<TimerPickerModalRef>(null)
 	const isNew = id === '0'
 
@@ -41,6 +42,12 @@ export default function PracticeFormPage() {
 			dispatch(practicesActions.setOne())
 		}
 	}, [id])
+
+	useEffect(() => {
+		if (statePractice?.id) {
+			setPractice(statePractice)
+		}
+	}, [statePractice?.id])
 
 	function handleChangeText<T extends keyof PracticeType>(
 		key: keyof PracticeType,
@@ -85,9 +92,24 @@ export default function PracticeFormPage() {
 	}
 
 	function submit() {
-		dispatch(practicesActions.create(practice))
-		Alert.alert('Done!', 'Ejercicio guardado ✅', [])
-		router.back()
+		if (
+			practice?.name
+			&& practice?.duration
+			&& practice?.repetitions
+			&& practice?.break
+		) {
+
+			if (isNew) {
+				dispatch(practicesActions.create(practice))
+			} else {
+				dispatch(practicesActions.update(practice.id, practice))
+			}
+
+			Alert.alert('Done!', 'Ejercicio guardado ✅', [])
+			router.back()
+		} else {
+			Alert.alert('¡Espera!', 'Ingresa los datos faltantes 👀', [])
+		}
 	}
 
 	return (
@@ -113,7 +135,7 @@ export default function PracticeFormPage() {
 						</Pressable>
 
 						<Text variant="subtitle" style={styles.title}>
-							Nuevo ejercicio
+							{practice?.name || (isNew ? 'Nuevo ejercicio' : 'Editar ejercicio')}
 						</Text>
 
 					</View>

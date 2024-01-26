@@ -4,9 +4,11 @@ export const styles = StyleSheet.create({
 	root: {
 		backgroundColor: 'red',
 		borderRadius: 8,
-		flex: 1,
+		flex: 1
+	},
+	pressable: {
 		padding: 24
 	},
 	container: {
-	}
+	},
 })

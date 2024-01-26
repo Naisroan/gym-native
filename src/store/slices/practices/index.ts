@@ -27,6 +27,11 @@ export const practicesSlice = createSlice({
 			state.data.push(payload.practice)
 		})
 
+		builder.addCase(practicesActions.update, (state, { payload }) => {
+			const idx = state.data.findIndex(p => p.id === payload.id)
+			state.data[idx] = payload.practice
+		})
+
 		builder.addCase(practicesActions.getOne, (state, { payload }) => {
 			state.practice = state.data.find(p => p.id === payload.id)
 		})
