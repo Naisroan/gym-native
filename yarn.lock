@@ -3893,6 +3893,11 @@ graphql@15.8.0:
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.8.0.tgz#33410e96b012fa3bdb1091cc99a94769db212b38"
   integrity sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==
 
+guid-typescript@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/guid-typescript/-/guid-typescript-1.0.9.tgz#e35f77003535b0297ea08548f5ace6adb1480ddc"
+  integrity sha512-Y8T4vYhEfwJOTbouREvG+3XDsjr8E3kIr7uf+JZ0BYloFsttiHU0WfvANVsR7TxNUJa/WpCnw/Ino/p+DeBhBQ==
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
@@ -5787,6 +5792,11 @@ react-native-screens@~3.22.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-timer-picker@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-timer-picker/-/react-native-timer-picker-1.5.1.tgz#8555ac6e680fd1ce37dbb69a5ebd0deaf1f0b2c0"
+  integrity sha512-k/hKnxWVgA0vOrkawZiHAD+jmUwcm4hTFtinaMKjbS90yKGa4pOlrugmtlhSqVGy0gW0GYhS29s1kRxUXyQ5YA==
 
 react-native@0.72.6:
   version "0.72.6"
