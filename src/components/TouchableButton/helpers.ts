@@ -13,6 +13,8 @@ import {
 
 export type TouchableVariant = 'contained' | 'outlined' | 'default'
 
+export type TouchableColor = 'primary' | 'default'
+
 export type TouchableImplementation = 'opacity'
 	| 'highlight'
 	| 'without-feedback'

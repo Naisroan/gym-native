@@ -1,43 +1,60 @@
 import { StyleProp, StyleSheet, TextStyle, ViewStyle } from "react-native"
 import { appStyles } from "themes"
 import { CurrentTheme } from "hooks/useCurrentTheme"
-import { TouchableVariant } from "./helpers"
+import { TouchableColor, TouchableVariant } from "./helpers"
 
 export const getStyles = (
 	currentTheme: CurrentTheme,
 	variant: TouchableVariant,
-	flatStyles?: StyleProp<ViewStyle>
+	color: TouchableColor,
+	flatStyles?: StyleProp<ViewStyle>,
 ) => {
-	const { palette, theme } = currentTheme
+	const { palette } = currentTheme
 
 	const touchableStyles: { [key in TouchableVariant]: ViewStyle } = {
 		'default': {
-			backgroundColor: palette.BG_COLOR,
-			borderColor: palette.TEXT_COLOR
+			backgroundColor: 'transparent',
+			borderColor: 'transparent',
+			paddingHorizontal: 0,
+			paddingVertical: 0
 		},
 
 		'contained': {
-			backgroundColor: palette.PRIMARY_COLOR,
-			borderColor: palette.PRIMARY_COLOR
+			backgroundColor: color === 'primary'
+				? palette.PRIMARY_COLOR
+				: palette.BG_COLOR,
+
+			borderColor: color === 'primary'
+				? palette.PRIMARY_COLOR
+				: palette.BG_COLOR,
 		},
 
 		'outlined': {
 			backgroundColor: palette.BG_COLOR,
-			borderColor: palette.PRIMARY_COLOR
+
+			borderColor: color === 'primary'
+				? palette.PRIMARY_COLOR
+				: palette.BG_COLOR
 		}
 	}
 
 	const textStyles: { [key in TouchableVariant]: TextStyle } = {
 		'default': {
-			color: palette.TEXT_COLOR
+			color: color === 'primary'
+				? palette.PRIMARY_COLOR
+				: palette.TEXT_COLOR
 		},
 
 		'contained': {
-			color: 'white'
+			color: color === 'primary'
+				? 'white'
+				: palette.TEXT_COLOR
 		},
 
 		'outlined': {
-			color: palette.PRIMARY_COLOR
+			color: color === 'primary'
+				? palette.PRIMARY_COLOR
+				: palette.TEXT_COLOR
 		}
 	}
 
@@ -50,6 +67,12 @@ export const getStyles = (
 		text: {
 			fontWeight: "500",
 			...textStyles[variant],
+		},
+
+		childrenContainer: {
+			alignItems: 'center',
+			flexDirection: 'row',
+			gap: 4
 		}
 	})
 }
