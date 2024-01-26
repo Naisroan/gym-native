@@ -27,6 +27,15 @@ const nativeComponentsStyles = (flatStyles?: StyleProp<ViewStyle | TextStyle | I
 	view: {
 	},
 
+	/** React native 'TextInput' component styles */
+	textInput: {
+		fontFamily: getFamilyFont(flatStyles as TextStyle),
+		borderWidth: 1,
+		borderRadius: 8,
+		paddingVertical: 16,
+		paddingHorizontal: 16
+	},
+
 	/** Custom component 'TouchableButton' component styles */
 	touchableButton: {
 		borderWidth: 1,
@@ -45,7 +54,10 @@ export const appStyles = {
 		combineStyles([rootStyles, nativeComponentsStyles(flatStyles).view, flatStyles]),
 
 	getTouchableButtonStyles: (flatStyles?: StyleProp<ViewStyle>) =>
-		combineStyles([rootStyles, nativeComponentsStyles(flatStyles).touchableButton, flatStyles])
+		combineStyles([rootStyles, nativeComponentsStyles(flatStyles).touchableButton, flatStyles]),
+
+	getTextInputStyles: (flatStyles?: StyleProp<TextStyle>) =>
+		combineStyles([rootStyles, nativeComponentsStyles(flatStyles).textInput, flatStyles]),
 
 }
 
